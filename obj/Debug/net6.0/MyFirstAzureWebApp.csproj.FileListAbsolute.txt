@@ -1,0 +1,2 @@
+C:\Users\지원\Desktop\ms\MyFirstAzureWebApp\bin\Debug\net6.0\MyFirstAzureWebApp.exe
+C:\Users\지원\Desktop\ms\MyFirstAzureWebApp\bin\Debug\net6.0\MyFirstAzureWebApp.dll
