@@ -3,21 +3,21 @@
     on: [push]
 
     jobs:
-    build:
+      build:
         runs-on: ubuntu-latest
         steps:
         # checkout the repo
         - uses: actions/checkout@v2
         - uses: Azure/login@v1
-        with:
+          with:
             creds: ${{ secrets.AZURE_CREDENTIALS }}
         - uses: Azure/get-keyvault-secrets@v1
-        with: 
+          with: 
             keyvault: "containervault-webapp123"
             secrets: 'containerPassword, containerUsername'
-        id: myGetSecretAction
+          id: myGetSecretAction
         - uses: azure/docker-login@v1
-        with:
+          with:
             login-server: ${{ steps.myGetSecretAction.outputs.containerUsername }}.azurecr.io
             username: ${{ steps.myGetSecretAction.outputs.containerUsername }}
             password: ${{ steps.myGetSecretAction.outputs.containerPassword }}
